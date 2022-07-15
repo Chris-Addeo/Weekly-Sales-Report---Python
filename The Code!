@@ -1,0 +1,21 @@
+sales = [0] * 7
+for i in range(7):
+    valid = False
+    while valid == False:
+        question = "Sales for day " + str(i + 1) + ": "
+        try:
+            daily_sales = float(input(question))
+            sales[i] += daily_sales
+            valid = True
+        except:
+            print("That is not a valid number. Please try again.")
+
+total = sum(sales)
+average = total / len(sales)
+highest = max(sales)
+lowest = min(sales)
+
+print("Total sales:", total)
+print("Average sales per day:", format(average, '.2f'))
+print("Highest sales day:", highest)
+print("Lowest sales day:", lowest)
